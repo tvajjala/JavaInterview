@@ -1,0 +1,412 @@
+
+<DATASET>
+	<TYPE>success</TYPE>
+	<RECORD>
+		<DATA type="name" id="812">12003</DATA>
+		<DATA type="messages">10</DATA>
+		<DATA type="last-sent">Mar. 4, 2014</DATA>
+		<DATA type="last-sent_tz">Mar. 4, 2014</DATA>
+		<DATA type="members">2,000,002</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="749">16jan</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="406">Attribute Test List
+			84c676de-c029-4255-84e6-435934
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="455">B</DATA>
+		<DATA type="messages">2</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="471">Clinton Test -
+			59465209-2c3b-11e3-9408-59e7408d230
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="479">Clinton Test -
+			b6326865-2c41-11e3-92e6-51f8a16f30e
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="385">Clinton_07012013</DATA>
+		<DATA type="messages">8</DATA>
+		<DATA type="last-sent">Sep. 11, 2013</DATA>
+		<DATA type="last-sent_tz">Sep. 11, 2013</DATA>
+		<DATA type="members">2</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="391">DEV-11865</DATA>
+		<DATA type="messages">2</DATA>
+		<DATA type="last-sent">Nov. 10, 2013</DATA>
+		<DATA type="last-sent_tz">Nov. 10, 2013</DATA>
+		<DATA type="members">100</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="392">DEV-11865-01</DATA>
+		<DATA type="messages">40</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">12</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="384">DEV-26062013349</DATA>
+		<DATA type="messages">55</DATA>
+		<DATA type="last-sent">Apr. 16, 2014</DATA>
+		<DATA type="last-sent_tz">Apr. 16, 2014</DATA>
+		<DATA type="members">5</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="470">efec68f9-2c3a-11e3-9408-59e7408d230b</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="387">extended-list</DATA>
+		<DATA type="messages">69</DATA>
+		<DATA type="last-sent">Oct. 23, 2013</DATA>
+		<DATA type="last-sent_tz">Oct. 23, 2013</DATA>
+		<DATA type="members">8</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+		<DATA type="extended_addressing">on</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="814">fablist-two</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="319">gmuff</DATA>
+		<DATA type="messages">133</DATA>
+		<DATA type="last-sent">Feb. 18, 2014</DATA>
+		<DATA type="last-sent_tz">Feb. 18, 2014</DATA>
+		<DATA type="members">1,523,902</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="337">gmuffShortList</DATA>
+		<DATA type="messages">25</DATA>
+		<DATA type="last-sent">Feb. 19, 2014</DATA>
+		<DATA type="last-sent_tz">Feb. 19, 2014</DATA>
+		<DATA type="members">2</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="733">list-sample-sam</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="394">list1</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="395">Mailing List Test</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="389">Marketing</DATA>
+		<DATA type="messages">3</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="815">mfab-list1</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="673">Pradeep</DATA>
+		<DATA type="messages">11</DATA>
+		<DATA type="last-sent">Jan. 27, 2014</DATA>
+		<DATA type="last-sent_tz">Jan. 27, 2014</DATA>
+		<DATA type="members">4</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="684">Pradeep - Supression</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">1</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="316">pras-test's</DATA>
+		<DATA type="messages">531</DATA>
+		<DATA type="last-sent">Mar. 4, 2014</DATA>
+		<DATA type="last-sent_tz">Mar. 4, 2014</DATA>
+		<DATA type="members">6</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="309">prasad-test's</DATA>
+		<DATA type="messages">552</DATA>
+		<DATA type="last-sent">Nov. 13, 2013</DATA>
+		<DATA type="last-sent_tz">Nov. 13, 2013</DATA>
+		<DATA type="members">22</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="532">Prasad_Test</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="390">Richards List</DATA>
+		<DATA type="messages">53</DATA>
+		<DATA type="last-sent">Nov. 26, 2013</DATA>
+		<DATA type="last-sent_tz">Nov. 26, 2013</DATA>
+		<DATA type="members">492</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="700">SalesForceContactsTest</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">624</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="453">sam-list</DATA>
+		<DATA type="messages">7</DATA>
+		<DATA type="last-sent">Nov. 13, 2013</DATA>
+		<DATA type="last-sent_tz">Nov. 13, 2013</DATA>
+		<DATA type="members">4,998</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="454">sam-list2</DATA>
+		<DATA type="messages">217</DATA>
+		<DATA type="last-sent">Feb. 7, 2014</DATA>
+		<DATA type="last-sent_tz">Feb. 7, 2014</DATA>
+		<DATA type="members">104</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="468">sam-list3</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="469">sam-list4</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="393">sameer-list</DATA>
+		<DATA type="messages">33</DATA>
+		<DATA type="last-sent">Oct. 2, 2013</DATA>
+		<DATA type="last-sent_tz">Oct. 2, 2013</DATA>
+		<DATA type="members">3</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="800">sameermlist1</DATA>
+		<DATA type="messages">4</DATA>
+		<DATA type="last-sent">Feb. 5, 2014</DATA>
+		<DATA type="last-sent_tz">Feb. 5, 2014</DATA>
+		<DATA type="members">1</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="720">SegmentConnectorTestList</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">1</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="489">test</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="397">Test List -
+			4774b611-5c45-4f06-8e78-d91a53f7f44b
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="401">Test List -
+			5cfb27e0-3696-4da1-aee2-f2913ef2e5d3
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="398">Test List -
+			65e34f3e-3ac7-4c60-a19d-f13237300d98
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="400">Test List -
+			8f564e51-a3da-404e-b2b8-fd95991c1848
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="403">Test List -
+			9aa6eafb-3f28-47f2-afa3-c42489d350d3
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="399">Test List -
+			a60aab45-01ee-41ac-b7e8-22e7a4fe9a9a
+		</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="386">Test List Modified -
+			b8e04eb6-bd16-47b9-afac-190cb
+		</DATA>
+		<DATA type="messages">1542</DATA>
+		<DATA type="last-sent">Mar. 18, 2014</DATA>
+		<DATA type="last-sent_tz">Mar. 18, 2014</DATA>
+		<DATA type="members">13,038</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:45:31+00:00</DATA>
+	</RECORD>
+	<RECORD>
+		<DATA type="name" id="490">test1</DATA>
+		<DATA type="messages">1</DATA>
+		<DATA type="last-sent"></DATA>
+		<DATA type="last-sent_tz"></DATA>
+		<DATA type="members">0</DATA>
+		<DATA type="status">active</DATA>
+		<DATA type="cache-time">2014-04-21T10:56:10+00:00</DATA>
+	</RECORD>
+</DATASET>
