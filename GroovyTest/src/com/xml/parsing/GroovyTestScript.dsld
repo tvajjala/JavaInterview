@@ -1,0 +1,37 @@
+
+import com.xml.parsing.Data;
+import com.xml.parsing.DataSet;
+
+def  xmlData=new XmlSlurper().parse(ClassLoader.getSystemResourceAsStream("dataset.xml"));
+
+def dataSet=new DataSet();
+dataSet.type=xmlData.TYPE;
+
+
+def data;
+
+xmlData.RECORD.each{node ->
+	data=new Data();
+	data.id=node.DATA.@id.text();
+	data.name=node.DATA[0]
+	data.messages=node.DATA[1];
+	data.lastsent=node.DATA[2];
+	data.lastsentTZ=node.DATA[3];
+	data.members=node.DATA[4];
+	data.status=node.DATA[5];
+	data.cacheTime=node.DATA[6];
+	data.extendedAddressing=node.DATA[7];
+
+
+	dataSet.records.add(data);
+}
+
+
+
+println  "RESPONSE STATUS: "+dataSet.type;
+println  "TOTAL RECORDS "+dataSet.records.size();
+
+dataSet.records.each{ dt -> println(dt)}
+
+
+

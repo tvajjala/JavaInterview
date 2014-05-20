@@ -1,0 +1,11 @@
+<data>
+  <person>
+    <firstname>Otto</firstname>
+    <lastname>Mueller</lastname>
+    <street>Lange Strasse</street>
+    <city>Berlin</city>
+  </person>
+  <financial>
+    <netincome>120000</netincome>
+  </financial>
+</data>
