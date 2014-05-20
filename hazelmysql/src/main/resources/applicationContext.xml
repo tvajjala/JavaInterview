@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:hz="http://www.hazelcast.com/schema/spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/data/mongo
+          http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.hazelcast.com/schema/spring
+           http://www.hazelcast.com/schema/spring/hazelcast-spring-3.1.xsd
+          ">
+
+	<!-- <mongo:mongo id="mongo" host="localhost" port="27017" />
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongo" />
+		<constructor-arg name="databaseName" value="test" />
+	</bean>
+	<bean class="com.hazelcast.spring.mongodb.MongoMapStore" id="mongomapstore">
+		<property name="mongoTemplate" ref="mongoTemplate" />
+	</bean>
+ -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean name="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/hazel_db" />
+		<property name="username" value="root" />
+		<property name="password" value="g0lyr1s" />
+	</bean>
+
+	<bean id="mysqlMapStore" class="com.lyris.proto.store.MySQLMapStore">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<!-- <property name="gson"> <bean class="com.google.gson.Gson" /> </property> -->
+	</bean>
+
+	<hz:hazelcast id="instance">
+		<hz:config>
+			<hz:group name="dev" password="dev" />
+			<hz:properties>
+				<hz:property name="hazelcast.merge.first.run.delay.seconds">5</hz:property>
+				<hz:property name="hazelcast.merge.next.run.delay.seconds">5</hz:property>
+			</hz:properties>
+
+			<hz:network port="5701" port-auto-increment="true">
+				<hz:join>
+					<hz:multicast enabled="true" />
+				</hz:join>
+			</hz:network>
+			<hz:map name="organization">
+				<hz:map-store enabled="true" implementation="mysqlMapStore"
+					write-delay-seconds="0">
+				</hz:map-store>
+			</hz:map>
+		</hz:config>
+	</hz:hazelcast>
+
+	<hz:map instance-ref="instance" id="orgmap" name="organization" />
+
+</beans>

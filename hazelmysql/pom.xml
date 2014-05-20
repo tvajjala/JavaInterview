@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.lyris</groupId>
+	<artifactId>hazelmysql</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<eclipsePluginVersion>2.8</eclipsePluginVersion>
+		<jdkName>JavaSE-1.6</jdkName>
+		<jdk.version>1.6</jdk.version>
+		<spring.version>4.0.3.RELEASE</spring.version>
+		<hazelcast.version>3.1.4</hazelcast.version>
+		<junit.version>4.11</junit.version>
+	</properties>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.hazelcast</groupId>
+			<artifactId>hazelcast</artifactId>
+			<version>${hazelcast.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hazelcast</groupId>
+			<artifactId>hazelcast-spring</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- driver managed datasource -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.4.2.RELEASE</version>
+		</dependency>
+
+
+		<!-- mysql connector -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.26</version>
+		</dependency>
+
+
+
+		<!-- object serialization <dependency> <groupId>com.google.code.gson</groupId> 
+			<artifactId>gson</artifactId> <version>2.2.4</version> </dependency> -->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.17</version>
+					<configuration>
+						<forkCount>1</forkCount><!-- The parameter forkCount defines the maximum 
+							number of JVM processes that Surefire will spawn concurrently to execute 
+							the tests. -->
+						<reuseForks>false</reuseForks><!-- forkCount=1/reuseForks=false executes 
+							each test class in its own JVM process, one after another. -->
+						<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+						<configuration>
+							<showSuccess>true</showSuccess>
+						</configuration>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.17</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>
