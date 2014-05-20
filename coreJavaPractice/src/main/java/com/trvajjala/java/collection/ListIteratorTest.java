@@ -25,7 +25,21 @@ public class ListIteratorTest {
 			if (li.nextIndex() == 2) {
 				li.add(11);
 			}
-			System.out.println(li.nextIndex() + " --> " + li.next());
+
+			int j = li.next();
+
+			/*
+			 * set method Replaces the last element returned by {@link #next} or {@link
+			 * #previous} with the specified element
+			 */
+			if (j == 44) {
+				//caont call immediately after add/remove 
+				li.set(77);
+				li.remove();
+			}
+
+			System.out.println(li.nextIndex() + " --> " + j);
+
 		}
 
 		System.out.println("------------------");
