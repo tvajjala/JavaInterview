@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hbm_practice</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">g0lyr1s</property>
+		<property name="hibernate.default_schema">hbm_practice</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Audit <property name="hibernate.ejb.event.post-insert">org.hibernate.ejb.event.EJB3PostInsertEventListener,org.hibernate.envers.event.AuditEventListener</property> 
+			<property name="hibernate.ejb.event.post-update">org.hibernate.ejb.event.EJB3PostUpdateEventListener,org.hibernate.envers.event.AuditEventListener</property> 
+			<property name="hibernate.ejb.event.post-delete">org.hibernate.ejb.event.EJB3PostDeleteEventListener,org.hibernate.envers.event.AuditEventListener</property> 
+			<property name="hibernate.ejb.event.pre-collection-update">org.hibernate.envers.event.AuditEventListener</property> 
+			<property name="hibernate.ejb.event.pre-collection-remove">org.hibernate.envers.event.AuditEventListener</property> 
+			<property name="hibernate.ejb.event.post-collection-recreate">org.hibernate.envers.event.AuditEventListener</property> 
+			<mapping class="com.trvajjala.entities.inheritance.joined.Employee" /> <mapping 
+			class="com.trvajjala.entities.inheritance.joined.ContractEmployee" /> <mapping 
+			class="com.trvajjala.entities.inheritance.joined.RegularEmployee" /> -->
+
+
+		<!-- -->
+
+		<!--OLTP Entity Mapping -->
+
+		<mapping class="com.trvajjala.entities.oltp.ActivationAttemptsEntity" />
+		<mapping class="com.trvajjala.entities.oltp.ActivationEntity" />
+		<mapping class="com.trvajjala.entities.oltp.ActivationLogEntity" />
+		<mapping class="com.trvajjala.entities.oltp.AddressEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.BodyLocationEntity" />
+		<mapping class="com.trvajjala.entities.oltp.BodyLocationHairColorEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.CartEntity" />
+		<mapping class="com.trvajjala.entities.oltp.CartLineEntity" />
+		<mapping class="com.trvajjala.entities.oltp.CustomerActivityEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.DeliveryStatusEntity" />
+		<mapping class="com.trvajjala.entities.oltp.DepartmentEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.EmailSubscriptionEntity" />
+		<mapping class="com.trvajjala.entities.oltp.EmailTemplateBlockEntity" />
+		<mapping class="com.trvajjala.entities.oltp.EmailTemplateEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.FraudDetectionInfoEntity" />
+		<mapping class="com.trvajjala.entities.oltp.FraudDetectionProviderEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.OrderEntity" />
+		<mapping class="com.trvajjala.entities.oltp.OrderLineEntity" />
+		<mapping class="com.trvajjala.entities.oltp.OrderLogEntity" />
+		<mapping class="com.trvajjala.entities.oltp.OrderStatusEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.PaymentInfoEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PaymentMethodEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PaymentStatusEntity" />
+		<mapping class="com.trvajjala.entities.oltp.ProductPromotionsEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PromotionCodeEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PromotionEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PromotionGroupEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PromotionMessagesEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PromotionRestrictionsEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PromotionSubTypeEntity" />
+		<mapping class="com.trvajjala.entities.oltp.PromotionTypeEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.QuestionnaireEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.ReplenishmentQueueEntity" />
+		<mapping class="com.trvajjala.entities.oltp.RoleEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.SessionInfoEntity" />
+		<mapping class="com.trvajjala.entities.oltp.ShippingCompanyEntity" />
+		<mapping class="com.trvajjala.entities.oltp.ShippingCompanyServiceEntity" />
+		<mapping class="com.trvajjala.entities.oltp.ShippingServiceCostEntity" />
+		<mapping class="com.trvajjala.entities.oltp.SweepStakeEntriesEntity" />
+		<mapping class="com.trvajjala.entities.oltp.SweepStakesEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.TestimonialsLinksEntity" />
+		<mapping class="com.trvajjala.entities.oltp.TestimonialsTypesEntity" />
+		<mapping class="com.trvajjala.entities.oltp.TriaTaxEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.UserEntity" />
+		<mapping class="com.trvajjala.entities.oltp.UserGroupEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.ViewStoryEntity" />
+
+		<mapping class="com.trvajjala.entities.oltp.WishlistEntity" />
+
+
+
+		<!--PRODUCT Entity Mapping -->
+
+		<mapping class="com.trvajjala.entities.product.ActivationDeviceTypeEntity" />
+		<mapping class="com.trvajjala.entities.product.AgeGroupEntity" />
+
+		<mapping class="com.trvajjala.entities.product.CatalogEntity" />
+		<mapping class="com.trvajjala.entities.product.CatalogVersionEntity" />
+		<mapping class="com.trvajjala.entities.product.ChannelBroadCastEntity" />
+		<mapping class="com.trvajjala.entities.product.ChannelEntity" />
+		<mapping class="com.trvajjala.entities.product.ChannelGroupEntity" />
+		<mapping class="com.trvajjala.entities.product.ColorEntity" />
+		<mapping class="com.trvajjala.entities.product.CurrencyEntity" />
+
+
+		<mapping class="com.trvajjala.entities.product.HearAboutEntity" />
+		<mapping class="com.trvajjala.entities.product.HistCatalogSkuEntity" />
+
+		<mapping class="com.trvajjala.entities.product.LocalizedSKUEntity" />
+		<mapping class="com.trvajjala.entities.product.LocationEntity" />
+
+		<mapping class="com.trvajjala.entities.product.PartEntity" />
+		<mapping class="com.trvajjala.entities.product.PriceEntity" />
+		<mapping class="com.trvajjala.entities.product.ProductEntity" />
+		<mapping class="com.trvajjala.entities.product.ProductFamilyEntity" />
+		<mapping class="com.trvajjala.entities.product.ProductGenerationEntity" />
+		<mapping class="com.trvajjala.entities.product.ProductLineEntity" />
+		<mapping class="com.trvajjala.entities.product.ProductSerialEntity" />
+
+		<mapping class="com.trvajjala.entities.product.RecommendedProductsEntity" />
+
+		<mapping class="com.trvajjala.entities.product.SKUAssetEntity" />
+		<mapping class="com.trvajjala.entities.product.SKUEntity" />
+		<mapping class="com.trvajjala.entities.product.StoreEntity" />
+
+
+		<mapping class="com.trvajjala.entities.product.VariantTypeEntity" />
+
+		<mapping class="com.trvajjala.entities.product.WareHouseAddressEntity" />
+		<mapping class="com.trvajjala.entities.product.WareHouseEntity" />
+		<mapping class="com.trvajjala.entities.product.WarrentyEntity" />
+
+
+	</session-factory>
+</hibernate-configuration>

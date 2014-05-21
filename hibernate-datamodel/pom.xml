@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.trvajjala.orm.practice</groupId>
+	<artifactId>hibernate-datamodel</artifactId>
+	<version>1.0</version>
+	<name>hibernate-datamodel</name>
+	<description>hibernate-datamodel</description>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<eclipsePluginVersion>2.8</eclipsePluginVersion>
+		<jdkName>JavaSE-1.6</jdkName>
+		<jdk.version>1.7</jdk.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+	</properties>
+
+
+	<dependencies>
+
+
+
+
+		<!-- Aggregator of the Hibernate Core modules. <dependency> <groupId>org.hibernate</groupId> 
+			<artifactId>hibernate-core</artifactId> <version>${hibernate.version}</version> 
+			</dependency> -->
+		<!-- Hibernate O/RM implementation of the JPA specification -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- To audit changes that are performed on an entity, you only need two 
+			things: the hibernate-envers jar on the classpath and an @Audited annotation 
+			on the entity. -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+
+		<!-- hibernate support -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-annotations</artifactId>
+			<version>3.5.6-Final</version>
+		</dependency>
+
+		<!-- to avoid jta previous version conflict -->
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.10</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+
+
+	</dependencies>
+
+</project>
