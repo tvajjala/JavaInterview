@@ -12,12 +12,14 @@ public class RegularExpression {
 
 		wordCount();
 		duplicateCount();
+		
+		regexGroup();
 	}
 
-	public void regexGroup() {
+	public static void regexGroup() {
 		String input = "hello world 34";
 
-		Pattern p = Pattern.compile("[\\D]{2}");
+		Pattern p = Pattern.compile("[\\D]{5}");
 
 		Matcher m = p.matcher(input);
 
