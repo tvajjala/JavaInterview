@@ -23,9 +23,23 @@ import com.sun.jersey.multipart.FormDataParam;
 @Path("/imageService")
 public class ResourceService {
 
+	@POST
+	@Path("/upload")
+	@Consumes({ MediaType.MULTIPART_FORM_DATA,
+			MediaType.APPLICATION_OCTET_STREAM })
+	@Produces(MediaType.APPLICATION_JSON)
+	public String uploadFile(@FormDataParam("fileName") String fileName,
+			@FormDataParam("content") final InputStream content) {
+		try {
+			return writeToDisk(content, fileName);
+		} catch (Throwable e) {
+			return "error while uploading to server";
+		}
+	}
+
 	// this will save image as well as return image
 
-	// http://localhost:8080/restWebService/upload.jsp
+	// http://localhost:8080/jersey-rest/upload.jsp
 
 	@POST
 	@Path("/save")
@@ -63,7 +77,7 @@ public class ResourceService {
 	}
 
 	// this will read image based on name
-	// http://localhost:8080/restWebService/rest/imageService/1.jpg
+	// http://localhost:8080/jersey-rest/rest/imageService/1.jpg
 	@GET
 	@Path("/{image}")
 	@Produces("image/*")
@@ -87,7 +101,7 @@ public class ResourceService {
 	}
 
 	// this will writes into disk
-	private void writeToDisk(InputStream uploadedInputStream, String name) {
+	private String writeToDisk(InputStream uploadedInputStream, String name) {
 
 		try {
 			OutputStream out = new FileOutputStream(new File(name));
@@ -103,10 +117,13 @@ public class ResourceService {
 
 			System.out.println("file saved at : "
 					+ new File(name).getAbsolutePath());
+
+			return new File(name).getAbsolutePath();
 		} catch (IOException e) {
 
 			// e.printStackTrace();
 		}
+		return "error while saving ";
 
 	}
 

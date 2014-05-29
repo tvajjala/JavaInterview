@@ -1,6 +1,7 @@
 package com.jersey.test;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 
 import javax.ws.rs.core.MediaType;
@@ -13,15 +14,15 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
 import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
+import com.sun.jersey.multipart.FormDataBodyPart;
+import com.sun.jersey.multipart.FormDataMultiPart;
 
-public class EmployeeTest {
-
+public class ResourceTest {
 	static final URI BASE_URI = getBaseURI();
 	static HttpServer server;
 
@@ -50,31 +51,32 @@ public class EmployeeTest {
 	}
 
 	@Test
-	public void configTest() throws IOException {
-		Client client = Client.create(new DefaultClientConfig());
-		WebResource service = client.resource(getBaseURI());
-		ClientResponse resp = service.path("rest").path("trvajjala")
-				.accept(MediaType.TEXT_PLAIN).get(ClientResponse.class);
-		
-		Assert.assertEquals(200, resp.getStatus());
-		
-		String text = resp.getEntity(String.class);
-		
-		System.out.println("Got stuff: " + text);
-		Assert.assertEquals("You Have Configured Grizzly Server Successfully.",
-				text);
-	}
+	public void uploadResource() throws Exception {
 
-	@Test
-	public void testGetDefaultUser() throws IOException {
+		String fileName = "2.jpg";
 		Client client = Client.create(new DefaultClientConfig());
-		WebResource service = client.resource(getBaseURI());
-		ClientResponse resp = service.path("rest").path("empService")
-				.path("employees").accept(MediaType.APPLICATION_JSON)
-				.get(ClientResponse.class);
-		Assert.assertEquals(200, resp.getStatus());
-		String text = resp.getEntity(String.class);
-		System.out.println("Got stuff: " + text);
-		Assert.assertNotEquals("", text);
+		WebResource webResource = client.resource(getBaseURI());
+		FormDataMultiPart form = new FormDataMultiPart();
+		form.field("fileName", fileName);
+		
+		InputStream content = getClass().getClassLoader().getResourceAsStream(fileName);
+
+		Assert.assertNotNull(" Invalid File Location " + fileName, content);
+
+		FormDataBodyPart fdp = new FormDataBodyPart("content", content,	MediaType.MULTIPART_FORM_DATA_TYPE);
+		form.bodyPart(fdp);
+		
+		String responseJson = webResource.path("rest").path("imageService")
+				.path("upload").type(MediaType.MULTIPART_FORM_DATA_TYPE)
+				.post(String.class, form);
+		
+		
+		content.close();
+		System.out.println(responseJson);
+		
+		
+		
+		
+
 	}
 }
