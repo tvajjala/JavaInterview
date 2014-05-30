@@ -1,0 +1,440 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.trvajjala.spring.rest</groupId>
+	<artifactId>spring-premier</artifactId>
+	<packaging>war</packaging>
+	<version>1.0</version>
+	<name>spring concepts</name>
+	<url>http://trvajjala.in</url>
+
+
+	<properties>
+		<java.version>1.6</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
+		<logger.version>1.7.7</logger.version>
+		<aspectj.version>1.8.0</aspectj.version>
+	</properties>
+
+
+	<repositories>
+		<repository>
+			<id>io.spring.repo.maven.release</id>
+			<url>http://repo.spring.io/release/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- added benefit of using the BOM (Bill Of Material) is that you no 
+				longer need to specify the <version> attribute when depending on Spring Framework 
+				artifacts -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- NOTE : BOM IS ENOUGH . BELOW DEPENDENCIES NOT REQUIRED. BUT HERE 
+				I HAVE EXPLAINED ABOUT EACH DEPENDENCY HIERARCHY -->
+
+
+			<!-- ================================================================================================================== -->
+			<!-- ===========================================CORE CONTAINER ============================================================= -->
+			<!-- ================================================================================================================== -->
+
+			<!-- The Core Container consists of the Core, Beans, Context, and Expression 
+				Language modules. -->
+
+
+			<!-- The Core and Beans modules provide the fundamental parts of the framework, 
+				including the IoC and Dependency Injection features. The BeanFactory is a 
+				sophisticated implementation of the factory pattern. It removes the need 
+				for programmatic singletons and allows you to decouple the configuration 
+				and specification of dependencies from your actual program logic. -->
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- The Context module builds on the solid base provided by the Core 
+				and Beans modules: it is a means to access objects in a framework-style manner 
+				that is similar to a JNDI registry. The Context module inherits its features 
+				from the Beans module and adds support for internationalization (using, for 
+				example, resource bundles), event-propagation, resource-loading, and the 
+				transparent creation of contexts by, for example, a servlet container. The 
+				Context module also supports Java EE features such as EJB, JMX ,and basic 
+				remoting. The ApplicationContext interface is the focal point of the Context 
+				module. -->
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- The Expression Language module provides a powerful expression language 
+				for querying and manipulating an object graph at runtime. It is an extension 
+				of the unified expression language (unified EL) as specified in the JSP 2.1 
+				specification. -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- ================================================================================================================== -->
+			<!-- =============================================== WEB SUPPORT ==================================================== -->
+			<!-- ================================================================================================================== -->
+
+			<!-- spring web core functionality like http client,web context, jaxws, 
+				jaxrpc ,jsf support -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- websocket support since 4.0.0.RELEASE -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-websocket</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- MVC support contains in the dependency DispatcherServlet is part 
+				of this -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- portlet support -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc-portlet</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- ================================================================================================================== -->
+			<!-- =============================================== AOP ,TUNING ==================================================== -->
+			<!-- ================================================================================================================== -->
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-instrument</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- ========================================================================================================= -->
+			<!-- ======================================== DATA ACCESS SUPPORT ============================================ -->
+			<!-- ========================================================================================================= -->
+
+			<!-- The JDBC module provides a JDBC-abstraction layer that removes the 
+				need to do tedious JDBC coding and parsing of database-vendor specific error 
+				code -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- The ORM module provides integration layers for popular object-relational 
+				mapping APIs -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- The OXM module provides an abstraction layer that supports Object/XML 
+				mapping implementations for JAXB, Castor, XMLBeans, JiBX and XStream. -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- The Java Messaging Service (JMS) module contains features for producing 
+				and consuming messages. -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jms</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+
+			<!-- The Transaction module supports programmatic and declarative transaction 
+				management for classes that implement special interfaces -->
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- ============================================================================================= -->
+			<!-- ======================================== LOGGING ============================================ -->
+			<!-- ============================================================================================= -->
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${logger.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${logger.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${logger.version}</version>
+			</dependency>
+
+
+
+			<!-- ============================================================================================= -->
+			<!-- ======================================== ASPECT-J============================================ -->
+			<!-- ============================================================================================= -->
+
+
+
+			<!-- The runtime needed to execute a program using AspectJ -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<!-- The AspectJ weaver introduces advices to java classes -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<!-- Tools from the AspectJ project -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjtools</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+
+
+
+			<!-- spring-all jar which contains all module in single place till 2.5.6 
+				version only which is not required ,i have added that to let you know <dependency> 
+				<groupId>org.springframework</groupId> <artifactId>spring</artifactId> <version>2.5.6</version> 
+				</dependency> -->
+
+		</dependencies>
+	</dependencyManagement>
+
+
+	<dependencies>
+
+
+		<!-- (1) spring core container -->
+
+		<!-- web -> context-> (aop),expression, (beans->core) -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<!-- (2) spring web module container MVC, portlet , web socket support -->
+
+
+		<!-- webmvc-portlet => webmvc => web -->
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc-portlet</artifactId>
+		</dependency>
+
+
+
+		<!-- (3) spring data access support -->
+
+
+
+		<!-- orm -> jdbc -> tx -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+
+
+		<!-- other important dependencies -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-instrument</artifactId>
+		</dependency>
+
+		<!-- LOGGER SUPPORT -->
+
+		<!-- Jakarta Commons Logging (JCL) -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+
+
+
+		<!-- to avoid compile time errors -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- test case support -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<finalName>spring-rest</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.17</version>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+	<description>this projects lets you know about spring layers and how maven added dependencies.
+
+				core 
+				bean
+expression                               tx     
+context                                     jdbc         
+    web                                       orm       
+   (websocket)
+    webmvc
+    webmvc-portlet
+
+when you add last dependency all other dependencies will added by maven
+
+it aslo focus on trasnsaction, aspect ,websocket modules usage.</description>
+</project>
