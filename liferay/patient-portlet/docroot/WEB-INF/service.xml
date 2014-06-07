@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+
+<service-builder package-path="com.innominds.portlets.service">
+	<namespace>NH</namespace>
+	<entity name="NapierUser" uuid="true" local-service="true"
+		remote-service="true">
+
+		<!-- PK fields -->
+		<!-- if existing user table is not fulfill our requirement this need to 
+			run service builder to generate custom tables -->
+		<column name="id" type="long" primary="true" />
+		<column name="liferayUserId" type="String" /><!-- liferay user tableId -->
+		<column name="userType" type="String" />
+		<column name="mrNumber" type="String" />
+		<column name="tpaId" type="String" />
+		<column name="coroporateId" type="String" />
+		<column name="patientId" type="String" />
+		<column name="age" type="int" />
+		<column name="mobile" type="String" />
+		<column name="gender" type="String" />
+		<column name="address" type="String">
+		
+		
+		</column>
+		<column name="specialization" type="String" />
+		
+		<!-- temp colums until we get solution to use user table -->
+	
+		<column name="firstname" type="String" />
+		<column name="lastname" type="String" />
+		<column name="username" type="String" />
+		<column name="password" type="String" />
+		<column name="email" type="String" />
+		
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="mrNumber" />
+		</order>
+
+		<finder name="liferayUserId" return-type="Object">
+			<finder-column name="liferayUserId" />
+		</finder>
+		
+		<!-- Finder methods -->
+
+		<finder name="TPA" return-type="Object">
+			<finder-column name="tpaId" />
+		</finder>
+		
+		<finder name="PID" return-type="Object">
+			<finder-column name="patientId" />
+		</finder>
+		
+
+		<finder name="MR" return-type="Object">
+			<finder-column name="mrNumber" />
+		</finder>
+		
+		<finder name="Credentials" return-type="Object">
+			<finder-column name="username" />
+			<finder-column name="password" />
+		</finder>
+		
+
+		<!-- References -->
+
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
+	</entity>
+</service-builder>

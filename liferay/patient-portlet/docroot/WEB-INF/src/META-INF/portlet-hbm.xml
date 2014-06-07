@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.innominds.portlets.service.model.NapierUser" />
+	<class name="com.innominds.portlets.service.model.impl.NapierUserImpl" table="NH_NapierUser">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="liferayUserId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mrNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tpaId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="coroporateId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="patientId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="age" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="mobile" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gender" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="specialization" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="username" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="password" type="com.liferay.portal.dao.orm.hibernate.StringType" column="password_" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

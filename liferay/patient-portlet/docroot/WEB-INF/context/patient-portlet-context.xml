@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:component-scan base-package="com.innominds.liferay.portlet" />
+
+	<tx:annotation-driven />
+
+	<bean id="portletModeHandlerMapping"
+		class="org.springframework.web.portlet.handler.PortletModeHandlerMapping">
+		<property name="portletModeMap">
+			<map>
+				<entry key="view" value-ref="patientProfileController"/>
+					<!-- initial view renderer -->
+			</map>
+		</property>
+	</bean>
+	
+	
+	<bean id="patientProfileController"
+		class="com.innominds.liferay.portlet.controller.PatientProfileController" />
+		
+	<bean
+		class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+		
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.InternalResourceView" />
+		<property name="prefix" value="/WEB-INF/jsp/patient/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="parameterMappingInterceptor"
+		class="org.springframework.web.portlet.handler.ParameterMappingInterceptor" />
+</beans>

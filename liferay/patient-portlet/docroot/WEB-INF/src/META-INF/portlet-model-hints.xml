@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.innominds.portlets.service.model.NapierUser">
+		<field name="uuid" type="String" />
+		<field name="id" type="long" />
+		<field name="liferayUserId" type="String" />
+		<field name="userType" type="String" />
+		<field name="mrNumber" type="String" />
+		<field name="tpaId" type="String" />
+		<field name="coroporateId" type="String" />
+		<field name="patientId" type="String" />
+		<field name="age" type="int" />
+		<field name="mobile" type="String" />
+		<field name="gender" type="String" />
+		<field name="address" type="String" />
+		<field name="specialization" type="String" />
+		<field name="firstname" type="String" />
+		<field name="lastname" type="String" />
+		<field name="username" type="String" />
+		<field name="password" type="String" />
+		<field name="email" type="String" />
+	</model>
+</model-hints>
