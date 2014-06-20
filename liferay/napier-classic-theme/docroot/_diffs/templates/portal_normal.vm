@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+<body class="$css_class"  style="margin-top:0px;margin-left:10px;margin-right:10px; padding:0px;">
+
+##alway show doc bar 
+## #if ($is_signed_in) 
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+$theme.include($body_top_include)
+#dockbar()  ## hide default singIn button for public users instead c/portal/login to login as admin 
+## #end
+<div class="container-fluid" id="wrapper" style="margin:0px;padding:1px;vertical-align:top;">
+	<header id="banner" role="banner" style="margin:0px;">
+		<div id="heading" style="background-color:#043658;height:100px;">
+			<h1 class="site-title" style="margin:0px;">
+				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+					<img alt="$logo_description" height="75px" src="/napier-classic-theme/images/logo.jpg" width="160px" />
+
+					#if ($show_site_name)
+						<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+							##  $theme.getSetting("header_text")
+						</span>
+					#end
+				</a>
+
+			</h1>
+
+		##*	<h2 class="page-title">
+		##*		<span>$the_title</span>
+		##*	</h2>
+		</div>
+		## #if ($is_signed_in)	
+		##	#parse ("$full_templates_path/navigation.vm")
+		## #end			
+	</header>
+
+	## portal main body section comes here
+	<div id="content" style="border:1px solid #043658;min-height:480px;margin:0px;">
+	##	#if ($is_signed_in)
+	##		<nav id="breadcrumbs">#breadcrumbs()</nav>
+	##	#end
+		
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<p class="powered-by">
+			#language ("powered-by") <a href="http://www.innominds.com" rel="external">Innominds</a>
+		</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

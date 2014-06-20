@@ -1,0 +1,25 @@
+@import url(dockbar.portal.css);
+
+.dockbar .create-content .menu-button span {
+	background-image: url(../images/dockbar/create.png);
+}
+
+.create-content-menu .add-event a {
+	background: url(/social-living-portlet/common/icons/events-management.png) no-repeat 3px 50%;
+	padding-left: 25px;
+}
+
+.create-content-menu .add-journal-entry a {
+	background: url(/html/icons/journal.png) no-repeat 3px 50%;
+	padding-left: 25px;
+}
+
+.create-content-menu .add-blog-entry a {
+	background: url(/html/icons/blogs.png) no-repeat 3px 50%;
+	padding-left: 25px;
+}
+
+.create-content-menu .add-media a {
+	background: url(/html/icons/document_library.png) no-repeat 3px 50%;
+	padding-left: 25px;
+}

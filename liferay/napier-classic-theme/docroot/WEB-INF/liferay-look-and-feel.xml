@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>6.2.1+</version>
+	</compatibility>
+	<theme id="napier-classic" name="Napier Classic Theme">
+		<settings>
+			<!-- custom properties that can read in VM -->
+			<setting key="napier_watermark" value="yes" />
+			<!-- configurable text for the theme -->
+			<setting key="header_text" configurable="true" type="textarea"
+				value="Online Patient Potal System" />
+				
+			<setting configurable="true" key="portlet-setup-show-borders-default"
+				type="checkbox" value="false" />
+			<setting configurable="true" key="bullet-style" options="arrows,dots,classic,modern"
+				value="dots" />
+			<setting configurable="true" key="show-site-name-default"
+				type="checkbox" value="false" />
+			<setting configurable="true" key="show-site-name-supported"
+				type="checkbox" value="false" />
+		</settings>
+		<color-scheme id="01" name="Orange">
+			<css-class>orange</css-class>
+		</color-scheme>
+		<color-scheme id="02" name="Blue">
+			<css-class>blue</css-class>
+			<color-scheme-images-path>
+				${images-path}/color_schemes/${css-class}
+			</color-scheme-images-path>
+		</color-scheme>
+	</theme>
+</look-and-feel>
