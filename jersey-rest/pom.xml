@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<version>1.0</version>
 
-	<name>jersey-rest-demo</name>
+	<name>jersey-rest</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

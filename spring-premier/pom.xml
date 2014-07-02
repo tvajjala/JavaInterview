@@ -418,7 +418,6 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.17</version>
 			</plugin>
-
 		</plugins>
 	</build>
 
