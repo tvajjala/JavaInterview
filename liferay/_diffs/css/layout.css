@@ -1,0 +1,24 @@
+@import "mixins";
+
+/* ---------- Column widths ---------- */
+
+.portlet-column-content.empty {
+	padding: 50px;
+}
+
+/* ---------- Wrapper ---------- */
+
+#wrapper {
+	padding:0;
+	border-top: 12px solid #09517d;
+
+	@include respond-to(phone) {
+		padding-left: 0em;
+		padding-right: 0em;
+	}
+
+	@include respond-to(tablet) {
+		padding-left: 0em;
+		padding-right: 0em;
+	}
+}

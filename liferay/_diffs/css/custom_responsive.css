@@ -1,0 +1,278 @@
+@import "compass";
+@import "mixins";
+
+/* ---------- Dockbar ---------- */
+
+@include respond-to(phone, tablet) {
+	.aui {
+		* {
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+		
+		td, th { 
+	  		padding-left: 50% !important;
+		}
+
+		#heading {
+			bottom: 100%;
+			position: absolute;
+
+			.site-title {
+				font-size: 26px;
+
+				img {
+					width: 142px;
+				}
+			}
+		}
+		
+		 .header1 {
+		 	padding:0 !important;
+		 }
+		
+		.signed-out #heading {
+			position: relative;
+			.site-title {
+				font-size: 26px;
+
+				img {
+					width: 200px;
+				}
+			}
+		}
+
+		#navigation {
+			display: none;
+
+			&.open {
+				display: block;
+
+				.navbar-inner {
+					@include border-radius(3px);
+
+					padding: 10px;
+
+					.nav-collapse {
+						height: auto;
+						overflow: visible;
+					}
+				}
+			}
+
+			.nav {
+				margin: 0;
+			}
+		}
+
+		.dockbar-split .dockbar, .dockbar {
+			float: right;
+			height: auto;
+			position: relative;
+			z-index: 401;
+
+			.info-items {
+				height: auto;
+				position: static;
+				width: 300px;
+			}
+
+			.navbar-inner {
+				width: auto;
+
+				.btn-navbar {
+					background: transparent;
+					border: none;
+					float: left;
+					font-size: 24px;
+					padding: 12px 15px;
+
+					&:hover {
+						background-color: #5BBAE8;
+					}
+
+					&.open {
+						background-color: #F5AF45;
+					}
+				}
+
+				.nav-account-controls {
+					padding: 0 5px;
+
+					.user-avatar-image {
+						display: none;
+					}
+				}
+
+				.nav-add-controls {
+					background: transparent;
+					border-top-width: 0;
+					position: static;
+					z-index: 350;
+					padding: 0 5px;
+
+					> li {
+						float: none;
+						margin: 0;
+						position: relative;
+
+						&.toggle-controls a {
+							clip: rect(auto auto auto auto);
+							position: static;
+							visibility: visible;
+						}
+
+						.page-preview-controls {
+							display: none;
+						}
+
+						> a {
+							background: transparent;
+							text-align: left;
+							white-space: nowrap;
+
+							&:hover {
+								background: #F3f3f3;
+							}
+
+							[class^="icon-"], [class^="icon-"], [class*=" icon-"] {
+								font-size: 22px;
+								margin-top: 0;
+							}
+
+							&.toggle-controls-link {
+								background: transparent;
+
+								[class^="icon-"], [class^="icon-"], [class*=" icon-"] {
+									color: #FFF;
+								}
+							}
+
+							.nav-item-label {
+								background: transparent;
+								display: inline;
+								left: 0;
+								margin-left: 0;
+								margin-top: 0;
+								padding: 0;
+								position: relative;
+							}
+
+							&:hover .nav-item-label {
+								display: inline;
+							}
+
+							.icon-caret-down {
+								display: none;
+							}
+						}
+					}
+				}
+
+				.nav-collapse {
+					z-index: 400;
+
+					&.open {
+						overflow: visible;
+					}
+
+					> .nav {
+						background: #009AE5;
+						border-width: 0;
+						left: auto;
+						margin: 0;
+						min-width: 160px;
+						position: absolute;
+						right: 0;
+						z-index: 400;
+
+						> li {
+							&.dropdown {
+								.dropdown-menu li a {
+									font-size: 16px;
+									line-height: 32px;
+								}
+
+								&.open {
+									> .dropdown-toggle {
+										color: #FFFFFF;
+									}
+								}
+							}
+
+							> a {
+								color: #FFF;
+								font-size: 16px;
+								margin: 5px 0;
+								padding: 6px 15px;
+
+								&:focus, &:hover {
+									background-color: #5BBAE8;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.portlet-dockbar {
+			display: inline-block;
+			width: 100%;
+		}
+
+		.signed-out #_145_navAddControlsNavbarBtn {
+			display: none;
+		}
+
+		.dashboard-container .notifications .well {
+		  width: 80% !important;
+		}
+		
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			border: none;
+			border-bottom: 1px solid darkgrey; 
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+		
+		td:nth-of-type(1):before { content: "MR Number"; }
+		td:nth-of-type(2):before { content: "IP Number"; }
+		td:nth-of-type(3):before { content: "Bill Number"; }
+		td:nth-of-type(4):before { content: "Company Sponsor"; }
+		td:nth-of-type(5):before { content: "Admission Date"; }
+		td:nth-of-type(6):before { content: "Bill Generated"; }
+		td:nth-of-type(7):before { content: "Bill Amount"; }
+		td:nth-of-type(8):before { content: "Paid Amount"; }
+		
+		.header1, .footer1, #content {
+			padding: 0;
+		}
+
+		.appointments table tbody tr:last-child, .reservation table tbody tr:last-child {
+			td {
+				display: none;
+			}
+		}	
+	}
+}
