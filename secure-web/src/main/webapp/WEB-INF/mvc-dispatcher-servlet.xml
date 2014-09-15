@@ -1,0 +1,74 @@
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+
+	<!-- Activates various annotations to be detected in bean classes -->
+	<context:annotation-config />
+	<aop:aspectj-autoproxy/>
+    <mvc:annotation-driven />
+
+	<context:component-scan base-package="com.suretouch" />
+
+
+	<!-- Configures the annotation-driven Spring MVC Controller programming 
+		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
+
+
+	<bean class="com.suretouch.processor.ApplicationProcessor" />
+
+	<bean id="tilesviewResolver"
+		class="org.springframework.web.servlet.view.tiles2.TilesViewResolver"  />
+
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-definitions.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+
+
+
+
+	<bean id="applicationController"
+		class="com.suretouch.controller.ApplicationController">
+		<!-- <property name="parser" ref="xmlParser" /> -->
+	</bean>
+
+
+	<bean id="documentBuilderFactory"
+		class="com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl"
+		factory-method="newInstance" />
+
+
+	<bean id="transformerFactory"
+		class="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl"
+		factory-method="newInstance" />
+
+
+
+</beans>

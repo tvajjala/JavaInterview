@@ -1,0 +1,62 @@
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	
+	<bean
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location"
+            value="classpath:jdbc.properties" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+    </bean>
+
+	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
+
+	<bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${database.driver}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.user}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.suretouch.hbm.Employee</value>
+				<value>com.suretouch.hbm.Authority</value>
+				<value>com.suretouch.hbm.Organization</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- <prop key="hibernate.use_outer_join">false</prop> <prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.SingletonEhCacheProvider</prop> 
+					<prop key="hibernate.hibernate.cache.use_query_cache">true</prop> -->
+			</props>
+		</property>
+	</bean>
+
+
+</beans>

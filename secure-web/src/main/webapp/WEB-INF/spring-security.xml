@@ -1,0 +1,47 @@
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+
+	<beans:bean
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+	
+	<http access-denied-page="/accessdenied.jsp" auto-config="true">
+		<intercept-url access="ROLE_TESTER,ROLE_MANAGER,ROLE_ADMIN"
+			pattern="/tester/*" />
+		<intercept-url access="ROLE_ADMIN" pattern="/admin/*" />
+		<intercept-url access="ROLE_MANAGER" pattern="/manager/*" />
+
+		<intercept-url access="ROLE_MANAGER,ROLE_ADMIN,ROLE_TESTER"
+			pattern="/landing.htm" />
+
+		<form-login always-use-default-target="true"
+			authentication-failure-url="/loginfailed.htm" default-target-url="/landing.htm"
+			login-page="/login.htm" />
+		<!-- <http-basic/> -->
+
+		<logout invalidate-session="true" logout-success-url="/landing.htm" />
+
+
+
+	</http>
+
+	<beans:bean id="userdetailsService"
+		class="com.suretouch.service.EmployeeServiceImpl">
+	</beans:bean>
+
+	<beans:bean id="authenticationProvider"
+		class="com.suretouch.provider.HibernateAuthenticationProvider">
+
+		<beans:property name="userDetailsService" ref="userdetailsService" />
+	</beans:bean>
+
+	<authentication-manager>
+		<authentication-provider ref="authenticationProvider" />
+	</authentication-manager>
+
+</beans:beans>
