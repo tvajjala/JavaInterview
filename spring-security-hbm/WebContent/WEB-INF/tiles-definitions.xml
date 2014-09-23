@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="template-main" template="/WEB-INF/pages/templates/main.jsp">
+		<put-attribute name="title"
+			value="Action Driven Test Automation FrameWork" type="string" />
+		<put-attribute name="banner-content"
+			value="/WEB-INF/pages/sections/homebanner.jsp" />
+		<put-attribute name="body-content" value="/WEB-INF/pages/sections/body.jsp" />
+		<put-attribute name="footer-content" value="/WEB-INF/pages/sections/footer.jsp" />
+	</definition>
+
+	<definition name="forward-page" extends="template-main">
+		<put-attribute name="banner-content" value="/WEB-INF/pages/sections/banner.jsp" />
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/sections/landing.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+	<definition name="access-denied" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/createUser.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/accessdenied.jsp" />
+	</definition>
+
+	<definition name="landing-page" template="/WEB-INF/pages/templates/secure.jsp">
+		<put-attribute name="title"
+			value="Action Driven Test Automation FrameWork" type="string" />
+		<put-attribute name="banner-content" value="/WEB-INF/pages/sections/banner.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/empty.jsp" />
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/sections/landing.jsp" />
+		<put-attribute name="footer-content" value="/WEB-INF/pages/sections/footer.jsp" />
+	</definition>
+
+
+	<definition name="tester-home" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/home.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+
+	<definition name="admin-home" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/home.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/admin_menu.jsp" />
+	</definition>
+
+
+
+	<definition name="create-modules" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/createModule.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/admin_menu.jsp" />
+	</definition>
+
+
+
+	<definition name="create-projects" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/createProject.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/admin_menu.jsp" />
+	</definition>
+
+
+	<definition name="create-user" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/createUser.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/admin_menu.jsp" />
+	</definition>
+
+	<definition name="objectId-createpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/createObjectIds.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+	<definition name="objectId-viewpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/viewObjectIds.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+	<definition name="message-createpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/createMessages.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+	<definition name="message-viewpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/viewMessages.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+	<definition name="teststeps-createpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/createTestSteps.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+
+
+
+	<definition name="testsuite-createpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/createTestSuite.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+
+	<definition name="testconfig-createpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/createTestConfig.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+	<definition name="execute-tests" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/executeTests.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+	<definition name="teststeps-viewpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/viewTestSteps.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+
+	<definition name="testcase-createpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/createTestCases.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+
+	<definition name="testcase-viewpage" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/viewTestCases.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+	<definition name="view-reports" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/viewReports.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+
+	<definition name="user-mgmt" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/user-mgmt.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/admin_menu.jsp" />
+	</definition>
+
+	<definition name="update_userdata" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/updateUserDetails.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/admin_menu.jsp" />
+	</definition>
+
+
+	<definition name="update-admin" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/admin/updateInfo.jsp" />
+		<put-attribute name="menu-content" value="/WEB-INF/pages/menu/admin_menu.jsp" />
+	</definition>
+
+	<definition name="viewxmls" extends="landing-page">
+		<put-attribute name="body-content"
+			value="/WEB-INF/pages/secure/tester/viewXMLs.jsp" />
+		<put-attribute name="menu-content"
+			value="/WEB-INF/pages/menu/tester_menu.jsp" />
+	</definition>
+
+</tiles-definitions>

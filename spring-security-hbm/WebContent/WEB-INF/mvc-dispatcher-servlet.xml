@@ -1,0 +1,86 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+
+	<!-- Activates various annotations to be detected in bean classes -->
+	<context:annotation-config />
+
+	<mvc:annotation-driven />
+
+	<context:component-scan base-package="com.adaequare.testng.adtf" />
+	<bean
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+	<!-- Configures the annotation-driven Spring MVC Controller programming 
+		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
+	<!-- <mvc:annotation-driven /> -->
+
+	<bean class="com.adaequare.testng.adtf.processor.ApplicationProcessor" />
+
+	<bean id="tilesviewResolver"
+		class="org.springframework.web.servlet.view.tiles2.TilesViewResolver"
+		p:order="0" />
+
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-definitions.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+
+
+	<bean id="xmlParser" class="com.adaequare.testng.adtf.parser.XMLParser">
+		<property name="documentBuilderFactory" ref="documentBuilderFactory" />
+		<property name="transformerFactory" ref="transformerFactory" />
+	</bean>
+
+
+	<bean id="applicationController"
+		class="com.adaequare.testng.adtf.controller.ApplicationController">
+		<!-- <property name="parser" ref="xmlParser" /> -->
+	</bean>
+
+
+	<bean id="documentBuilderFactory"
+		class="com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl"
+		factory-method="newInstance" />
+
+
+	<bean id="transformerFactory"
+		class="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl"
+		factory-method="newInstance" />
+
+	<bean id="selenium" class="com.adaequare.testng.adtf.testng.Selenium" />
+	
+	<bean id="xmlSeleniumService" class="com.adaequare.testng.adtf.testng.XMLSeleniumService" />
+	<bean id="ormSeleniumService" class="com.adaequare.testng.adtf.testng.ORMSeleniumService" />
+
+</beans>
