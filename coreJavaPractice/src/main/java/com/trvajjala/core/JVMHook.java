@@ -1,7 +1,7 @@
 package com.trvajjala.core;
 
 public class JVMHook {
-
+public int NUM=20;
 	public static void main(String[] args) {
 
 		Runtime.getRuntime().addShutdownHook(new MyThread());
