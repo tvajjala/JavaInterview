@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<configuration>
+		<stop-on-errors>true</stop-on-errors>
+		<date-format>MM/dd/yyyy HH:mm</date-format>
+		<wildcard>true</wildcard>
+	</configuration>
+	
+	<mapping>
+		<class-a>com.suretouch.core.domain.model.User</class-a>
+		<class-b>com.suretouch.core.rest.model.UserVO</class-b>
+		<field>
+			<a>username</a>
+			<b>username</b>
+		</field>
+	</mapping>
+
+	<mapping>
+		<class-a>com.suretouch.core.domain.model.Clinic</class-a>
+		<class-b>com.suretouch.core.rest.model.ClinicVO</class-b>
+	</mapping>
+	
+	
+	
+	<mapping>
+		<class-a>com.suretouch.core.domain.model.Authority</class-a>
+		<class-b>com.suretouch.core.rest.model.AuthorityVO</class-b>
+	</mapping>
+	
+
+</mappings> 

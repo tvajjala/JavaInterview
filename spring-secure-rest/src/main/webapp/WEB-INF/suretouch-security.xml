@@ -1,0 +1,61 @@
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+
+	<beans:bean
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+	<http realm="SureTouch API" use-expressions="true" auto-config="false"
+		create-session="stateless" entry-point-ref="authenticationEntryPoint"
+		authentication-manager-ref="authenticationManager">
+
+		<custom-filter ref="authenticationFilter"  position="FORM_LOGIN_FILTER" />
+
+		<intercept-url access="hasRole('ROLE_ADMIN')" pattern="/api/**" />
+
+		<intercept-url access="hasRole('ROLE_DOCTOR')" pattern="/api/dt/**" />
+
+		<intercept-url access="hasRole('ROLE_EXAMINER')"
+			pattern="/api/ex/**" />
+
+		<intercept-url access="hasRole('ROLE_PATIENT')" pattern="/api/pt/**" />
+
+		<intercept-url access="hasRole('ROLE_SCHEDULER')"
+			pattern="/api/sch/**" />
+	</http>
+
+
+
+	<beans:bean id="authenticationFilter"
+		class="com.suretouch.web.security.filter.RestAuthenticationFilter" />
+
+	<!-- Entry point for REST service. -->
+	<beans:bean id="authenticationEntryPoint"
+		class="com.suretouch.web.security.entry.RestAuthenticationEntryPoint" />
+
+
+
+	<beans:bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" />
+
+	<beans:bean id="saltSource"
+		class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+		<beans:property name="userPropertyToUse" value="username" />
+	</beans:bean>
+
+
+	<!-- <beans:bean id="authenticationService" class="com.suretouch.core.security.service.AuthenticationService" 
+		/> -->
+	<beans:bean id="authenticationProvider"
+		class="com.suretouch.core.hibernate.provider.HibernateAuthenticationProvider" />
+
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="authenticationProvider" />
+	</authentication-manager>
+
+</beans:beans>
